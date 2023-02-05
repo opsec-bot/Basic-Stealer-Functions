@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "adm-zip": "^0.5.10",
+    "discord-webhook-node": "^1.1.8"
+  },
+  "name": "w-functions",
+  "version": "1.0.0",
+  "description": "made by atlas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
